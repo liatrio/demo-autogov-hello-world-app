@@ -1,0 +1,23 @@
+name: Build Image Caller Workflow
+
+on:
+  workflow_dispatch:
+  release:
+    types: [published]
+  push:
+    branches: ["**"]
+
+permissions: {}
+
+jobs:
+  attest-image-hp: #image
+    permissions:
+      id-token: write
+      attestations: write
+      packages: write
+      contents: write
+    uses: liatrio/demo-gh-autogov-workflows/.github/workflows/rw-hp-build-image.yaml@7031b13fe73cb32c5ab0897d12fb4db3e9a4fea7 # v0.13.0
+    secrets: inherit
+    with:
+      subject-name: ghcr.io/${{ github.repository }}
+      cert-identity: https://github.com/liatrio/demo-gh-autogov-workflows/.github/workflows/rw-hp-attest-image.yaml@7031b13fe73cb32c5ab0897d12fb4db3e9a4fea7 # v0.13.0

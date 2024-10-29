@@ -1,0 +1,19 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: demo-autogov-hello-world-app
+  description: "A caller workflow demo autogov reusable GH attest and OPA eval actions by calling our autogov reuseable workflows; https://github.com/liatrio/demo-gh-autogov-workflows."
+  annotations:
+    github.com/project-slug: liatrio/demo-autogov-hello-world-app
+    github.com/autogov-release-status: "true"
+  tags:
+    - autogov
+    - demo
+    - github-actions
+    - workflow
+spec:
+  type: service
+  lifecycle: experimental
+  owner: tag-autogov
+  system: demo-autogov-backstage-plugin
