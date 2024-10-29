@@ -1,4 +1,4 @@
-# Caller Workflow using GitHub Artifact Attestations
+# Demo Hello World App repo using GitHub Artifact Attestations
 
 - [Quick Start Guide](#quick-start-guide)
 - [Paving the Path](#paving-the-path)
@@ -16,6 +16,10 @@
 This repo serves as a demo app for running Automated Governance workflows and render the autogov results in a Backstage instance.
 
 👉 [Visit Our Contact Page](https://www.liatrio.com/) for more information on how Liatrio can support your Backstage or Automated Governance journey.
+
+This repo is meant to be publicly visible.
+
+This repo **must** be set to internal when in development because calls an internally visible reusable workflow and GitHub does not yet support calling a private or internal workflow from a public repo.
 
 ## Quick Start Guide
 
