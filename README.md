@@ -19,7 +19,7 @@ This repo serves as a demo app for running Automated Governance workflows and re
 
 This repo is meant to be publicly visible.
 
-This repo **must** be set to internal when in development because calls an internally visible reusable workflow and GitHub does not yet support calling a private or internal workflow from a public repo.
+This repo **must** be set to internal when in development because it calls an internally visible reusable workflow and GitHub does not yet support calling a private or internal workflow from a public repo.
 
 ## Quick Start Guide
 
