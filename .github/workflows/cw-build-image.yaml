@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: Download Image
         run: |
-          gh release download \
+          gh release download v0.6.0 \
             --repo liatrio/demo-gh-autogov-policy-library \
             --pattern "bundle.tar.gz"
 
