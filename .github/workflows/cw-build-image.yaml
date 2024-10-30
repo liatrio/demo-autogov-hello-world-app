@@ -7,26 +7,17 @@ on:
   push:
     branches: ["**"]
 
-jobs:
-  test-download:
-    runs-on: ubuntu-latest
-    env:
-      GH_TOKEN: ${{ github.token }}
-    steps:
-      - name: Download Image
-        run: |
-          gh release download v0.6.0 \
-            --repo liatrio/demo-gh-autogov-policy-library \
-            --pattern "bundle.tar.gz"
+permissions: {}
 
-  # attest-image-hp: #image
-  #   permissions:
-  #     id-token: write
-  #     attestations: write
-  #     packages: write
-  #     contents: write
-  #   uses: liatrio/demo-gh-autogov-workflows/.github/workflows/rw-hp-build-image.yaml@72fce8087349ddd2de19a34265efd211ffed7a37
-  #   secrets: inherit
-  #   with:
-  #     subject-name: ghcr.io/${{ github.repository }}
-  #     cert-identity: https://github.com/liatrio/demo-gh-autogov-workflows/.github/workflows/rw-hp-attest-image.yaml@72fce8087349ddd2de19a34265efd211ffed7a37
+jobs:
+  attest-image-hp: #image
+    permissions:
+      id-token: write
+      attestations: write
+      packages: write
+      contents: write
+    uses: liatrio/demo-gh-autogov-workflows/.github/workflows/rw-hp-build-image.yaml@a23f3f33674bdf59a98ce3a9caa8512879bd0a43
+    secrets: inherit
+    with:
+      subject-name: ghcr.io/${{ github.repository }}
+      cert-identity: https://github.com/liatrio/demo-gh-autogov-workflows/.github/workflows/rw-hp-attest-image.yaml@a23f3f33674bdf59a98ce3a9caa8512879bd0a43
