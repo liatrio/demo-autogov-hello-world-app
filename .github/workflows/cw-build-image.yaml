@@ -1,11 +1,12 @@
-name: Build Image Caller Workflow
+name: Build Entrypoint Caller Workflow
 
 on:
   workflow_dispatch:
-  release:
-    types: [published]
   push:
     branches: ["**"]
+    paths-ignore:
+      - catalog-info.yaml
+      - README.md
 
 permissions: {}
 
@@ -14,10 +15,11 @@ jobs:
     permissions:
       id-token: write
       attestations: write
-      packages: write
+      packages: write # necessary if build-type is image
       contents: write
-    uses: liatrio/demo-gh-autogov-workflows/.github/workflows/rw-hp-build-image.yaml@1f47c55a769553f77123083dadb884b6b10b37b0
+    uses: liatrio/demo-gh-autogov-workflows/.github/workflows/rw-hp-build-image.yaml@@a01815cd7e90dff1c09b354f81894a6e7d4b065f #v0.13.2
     secrets: inherit
     with:
       subject-name: ghcr.io/${{ github.repository }}
-      cert-identity: https://github.com/liatrio/demo-gh-autogov-workflows/.github/workflows/rw-hp-attest-image.yaml@1f47c55a769553f77123083dadb884b6b10b37b0
+      cert-identity: https://github.com/liatrio/demo-gh-autogov-workflows/.github/workflows/rw-hp-attest-image.yaml@a01815cd7e90dff1c09b354f81894a6e7d4b065f #v0.13.2
+      delete-images: true
