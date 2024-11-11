@@ -6,7 +6,7 @@ metadata:
   description: "A caller workflow demo autogov reusable GH attest and OPA eval actions by calling our autogov reuseable workflows; https://github.com/liatrio/demo-gh-autogov-workflows."
   annotations:
     github.com/project-slug: liatrio/demo-autogov-hello-world-app
-    github.com/autogov-release-status: "true"
+    liatrio.com/autogov-latest-release-file: "results"
   tags:
     - autogov
     - demo
