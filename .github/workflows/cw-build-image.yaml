@@ -5,8 +5,9 @@ on:
   push:
     branches: ["**"]
     paths-ignore:
-      - catalog-info.yaml
       - README.md
+      - catalog-info.yaml
+      - renovate.json
 
 permissions: {}
 
