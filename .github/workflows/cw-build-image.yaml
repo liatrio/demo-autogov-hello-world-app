@@ -22,4 +22,3 @@ jobs:
     with:
       subject-name: ghcr.io/${{ github.repository }}
       cert-identity: https://github.com/liatrio/demo-gh-autogov-workflows/.github/workflows/rw-hp-attest-image.yaml@788074ccc85737ee9c0cd24e576c07c077bc7113 # v0.15.7
-      delete-images: true
